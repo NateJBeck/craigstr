@@ -1,0 +1,15 @@
+<%= form_for @post do |form| %>
+  <%= render "error_messages", target: @post %>
+
+  <div>
+    <%= form.text_field :title %>
+    <%= form.label :title %>
+  </div>
+
+  <div>
+    <%= form.text_area :body %>
+    <%= form.label :body %>
+  </div>
+
+  <%= form.submit %>
+<% end %>
