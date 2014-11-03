@@ -4,5 +4,4 @@ Rails.application.routes.draw do
 
   root "users#index"
   
-  # get "/:username", to: "users#index", as: "user"
 end
