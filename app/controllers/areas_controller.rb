@@ -2,6 +2,8 @@ class AreasController < ApplicationController
   def index
     @area = Area.new
     @areas = Area.all
+    @category = Category.new
+    @categories = Category.all
   end
 
   def create

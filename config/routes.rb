@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :areas, only: [:create]
 
   resources :posts, only: [:index, :create]
+  resources :categories, only: [:create]
   
   root "areas#index" 
 end

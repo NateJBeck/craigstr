@@ -1,7 +1,14 @@
 <% if current_user.admin == true %>
   <%= render "form", target: @area %>
+  <%= render "categories/form", target: @category %>
 <% end %>
 
+<h3>Areas</h3>
 <ul>
   <%= render @areas %>
+</ul>
+
+<h3>Categories</h3>
+<ul>
+  <%= render @categories %>
 </ul>
