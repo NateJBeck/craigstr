@@ -1,0 +1,7 @@
+<% if current_user.admin == true %>
+  <%= render "form", target: @area %>
+<% end %>
+
+<ul>
+  <%= render @areas %>
+</ul>
