@@ -3,4 +3,6 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
 
   root "users#index"
+  
+  # get "/:username", to: "users#index", as: "user"
 end
