@@ -2,6 +2,7 @@
   <% if current_user.admin? %>
     <%= render "categories/form", target: @category %>
     <%= render "areas/form", target: @area %>
+    <%= render @posts.order(spam: :desc)  %>
   <% end %>
 <% end %>
 

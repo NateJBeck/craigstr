@@ -4,6 +4,7 @@ class AreasController < ApplicationController
     @areas = Area.all
     @category = Category.new
     @categories = Category.all
+    @posts = Post.all
   end
 
   def create
