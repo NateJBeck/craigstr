@@ -1,6 +1,8 @@
-<% if current_user.admin == true %>
-  <%= render "form", target: @area %>
-  <%= render "categories/form", target: @category %>
+<% if signed_in? %>
+  <% if current_user.admin? %>
+    <%= render "categories/form", target: @category %>
+    <%= render "areas/form", target: @area %>
+  <% end %>
 <% end %>
 
 <h3>Areas</h3>

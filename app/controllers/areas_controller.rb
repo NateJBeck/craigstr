@@ -8,10 +8,13 @@ class AreasController < ApplicationController
 
   def create
     @area = Area.new(area_params)
+    
     if @area.save
-      redirect_to root_path
+      redirect_to areas_path
     else
       @areas = Area.all
+      @category = Category.new
+      @categories = Category.all
       render :index
     end
   end
