@@ -1,6 +1,12 @@
 <ul>
-  <li>
-    <strong><%= post.title %></strong><br />
-    <%= post.body %>
-  </li>
+<li>
+  <strong><%= post.title %></strong><br />
+  <%= post.body %>
+  <% if post.user == current_user %>
+    <%= link_to "Edit Post", edit_post_path(post) %>
+    <%= form_for post, method: :delete do |form| %>
+      <%= form.submit "Delete Post" %>
+    <% end %>
+  <% end %>
+</li>
 </ul>

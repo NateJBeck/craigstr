@@ -4,7 +4,7 @@ class CategoriesController < ApplicationController
     if @category.save
       redirect_to :back
     else
-      redirect_to :back
+      redirect_to root_path
     end
   end
 
