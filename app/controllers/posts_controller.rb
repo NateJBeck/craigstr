@@ -29,7 +29,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    post = find_post_from_params
+    post = find_post_from_url
     post.destroy
 
     redirect_to :back
