@@ -1,5 +1,6 @@
-<%= form_for @category do |form| %>
+<%= form_for [@area, @category] do |form| %>
   <%= render "error_messages", target: @category %>
+  <% hidden_field :area_id, value: :id %>
 
   <div>
     <%= form.text_field :name %>

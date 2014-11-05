@@ -1,16 +1,21 @@
 class CategoriesController < ApplicationController
   def create
-    @category = Category.new(category_params)
+    @area = find_area_from_url
+    @category = @area.categories.new(category_params)
     if @category.save
       redirect_to :back
     else
-      redirect_to root_path
+      redirect_to :back
     end
   end
 
   private
 
   def category_params
-    params.require(:category).permit(:name)
+    params.require(:category).permit(:name, :area_id)
+  end
+
+  def find_area_from_url
+    Area.find(params[:area_id])
   end
 end

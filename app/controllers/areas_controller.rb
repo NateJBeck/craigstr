@@ -19,6 +19,12 @@ class AreasController < ApplicationController
     end
   end
 
+  def show
+    @area = Area.find(params[:id])
+    @category = Category.new
+    @categories = Category.where(area_id: @area.id)
+  end
+
   private
 
   def area_params
