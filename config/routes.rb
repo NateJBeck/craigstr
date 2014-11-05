@@ -5,7 +5,10 @@ Rails.application.routes.draw do
     resources :categories, only: [:create, :index, :show]
   end
 
-  resources :posts, only: [:index, :create, :update, :edit, :destroy]
+  resources :posts, only: [:index, :create, :update, :edit, :destroy] do
+    resources :spams, only: [:create]
+  end
+  
   
   root "areas#index" 
 end
