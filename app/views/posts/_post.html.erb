@@ -4,7 +4,7 @@
   <%= post.body %>
 
   <% if signed_in? %>
-    <% if post.user == current_user %>
+    <% if user_can_modify?(post) %>
       <%= link_to "Edit Post", edit_post_path(post) %>
       <%= form_for post, method: :delete do |form| %>
         <%= form.submit "Delete Post" %>
