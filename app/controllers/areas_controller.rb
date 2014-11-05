@@ -5,6 +5,7 @@ class AreasController < ApplicationController
     @category = Category.new
     @categories = Category.all
     @posts = Post.all
+    @spam_listings = Post.spam_listings
   end
 
   def create

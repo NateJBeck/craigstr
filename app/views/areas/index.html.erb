@@ -1,7 +1,7 @@
 <% if signed_in? %>
   <% if current_user.admin? %>
     <%= render "areas/form", target: @area %>
-    <%= render @posts.order(spam: :desc)  %>
+    <%= render @spam_listings %>
   <% end %>
 <% end %>
 

@@ -14,8 +14,9 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 
 gem 'monban-generators'
-gem 'pry', group: :developement
+
 group :development do
+  gem 'pry'
   gem 'better_errors'
+  gem 'binding_of_caller'
 end
-gem 'binding_of_caller'
