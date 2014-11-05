@@ -1,13 +1,9 @@
-<% if signed_in? %>
-  <% if current_user.admin? %>
+<% if signed_in? && current_user.admin? %>
     <%= render "areas/form", target: @area %>
     <%= render @spam_listings %>
-  <% end %>
 <% end %>
 
 <h3>Areas</h3>
 <ul>
   <%= render @areas %>
 </ul>
-
-<%= link_to "Posts", posts_path %>

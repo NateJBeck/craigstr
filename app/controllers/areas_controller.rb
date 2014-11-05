@@ -25,6 +25,8 @@ class AreasController < ApplicationController
     @area = Area.find(params[:id])
     @category = Category.new
     @categories = Category.where(area_id: @area.id)
+    @post = Post.new
+    @posts = Post.where(area_id: @area.id)
   end
 
   private

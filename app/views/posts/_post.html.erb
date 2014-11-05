@@ -5,8 +5,8 @@
 
   <% if signed_in? %>
     <% if user_can_modify?(post) %>
-      <%= link_to "Edit Post", edit_post_path(post) %>
-      <%= form_for post, method: :delete do |form| %>
+      <%= link_to "Edit Post", edit_area_post_path(post.area, post) %>
+      <%= form_for [post.area, post], method: :delete do |form| %>
         <%= form.submit "Delete Post" %>
       <% end %>
     <% end %>

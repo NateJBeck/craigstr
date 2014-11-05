@@ -8,10 +8,10 @@ class PostsController < ApplicationController
     @post = current_user.posts.new(post_params)
 
     if @post.save
-      redirect_to posts_path
+      redirect_to :back
     else
       @posts = Post.all
-      render :index
+      redirect_to :back
     end
   end
 
@@ -38,7 +38,10 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:title, :body)
+    params.
+      require(:post).
+      permit(:title, :body, :area_id).
+      merge(area_id: params[:area_id])
   end
 
   def find_post_from_url

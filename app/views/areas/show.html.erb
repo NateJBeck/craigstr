@@ -1,5 +1,9 @@
-<% if signed_in? && current_user.admin?%>
+<% if signed_in? && current_user.admin? %>
   <%= render "categories/form", target: @category %>
+<% end %>
+
+<% if signed_in? %>
+  <%= render "posts/form", target: @post %>
 <% end %>
 
 <h1><%= @area.name %></h1>
@@ -7,9 +11,7 @@
 <h3>Categories</h3>
 
 <ul>
-  <% @area.categories.each do |category| %>
-    <li>
-      <%= category.name %>
-    </li>
-  <% end %>
+  <%= render @categories %>
 </ul>
+
+<%= render @posts %>
