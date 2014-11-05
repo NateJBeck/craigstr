@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
     @area = find_area_from_url
     @category = @area.categories.new(category_params)
     if @category.save
-      redirect_to :back
+      redirect_to area_path(@area)
     else
       redirect_to :back
     end
