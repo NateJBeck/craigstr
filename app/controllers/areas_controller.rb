@@ -26,7 +26,7 @@ class AreasController < ApplicationController
     @category = Category.new
     @categories = Category.where(area_id: @area.id)
     @post = Post.new
-    @posts = Post.where(area_id: @area.id)
+    @posts = @area.posts.order(created_at: :desc).page(params[:page]).per(4)
   end
 
   private
