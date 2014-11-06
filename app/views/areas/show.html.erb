@@ -14,4 +14,4 @@
   <%= render @categories %>
 </ul>
 
-<%= render @posts %>
+<%= render @posts.order(created_at: :desc) %>
