@@ -1,9 +1,9 @@
 <% if signed_in? && current_user.admin? %>
-  <%= render "categories/form", target: @category %>
+  <%= render "categories/form", category: @category %>
 <% end %>
 
 <% if signed_in? %>
-  <%= render "posts/form", target: @post %>
+  <%= render "posts/form", post: @post, area: @area %>
 <% end %>
 
 <h1><%= @area.name %></h1>
