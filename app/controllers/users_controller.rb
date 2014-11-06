@@ -19,6 +19,11 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    @posts = current_user.posts.order(created_at: :desc)
+    @areas = Area.all
+  end
+
   private
 
   def user_params
