@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   def update
     @post = find_post_from_url
     if @post.update(post_params)
-      redirect_to posts_path
+      redirect_to @post.area
     else
       render :edit
     end
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
   def post_params
     params.
       require(:post).
-      permit(:title, :body, :area_id).
+      permit(:title, :body, :area_id, :category_id).
       merge(area_id: params[:area_id])
   end
 

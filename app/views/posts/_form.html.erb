@@ -11,5 +11,7 @@
     <%= form.label :body %>
   </div>
 
+  <%= form.collection_select :category_id, Category.all, :id, :name, {:prompt => "Select Category"} %>
+
   <%= form.submit %>
 <% end %>
