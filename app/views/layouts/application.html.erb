@@ -8,24 +8,35 @@
   </head>
 
   <body>
-    <div class="sign-in">
-      <% if signed_in? %>
-        <%= link_to "Sign out", session_path, method: :delete %>
-        <%= current_user.email %>
+    <div id="top-bar-container">
+      <div id="top-bar">
+        <div class="sign-in">
+          <% if signed_in? %>
+            <%= link_to "Sign out", session_path, method: :delete %>
+            <%= current_user.email %>
 
-        <% if current_user.admin == true %>
-          <h5>You are an Admin</h5>
-        <% end %>
+            <% if current_user.admin == true %>
+              <h5>You are an Admin</h5>
+            <% end %>
 
-      <% else %>
-        <%= link_to "Sign in", new_session_path %>
-        <%= link_to "Sign up", new_user_path %>
-      <% end %>
+          <% else %>
+            <%= link_to "Sign in", new_session_path %>
+            <%= link_to "Sign up", new_user_path %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="nav-container">
+      <div class="nav-top">
+        <ul>
+          <li><%= link_to "Areas", areas_path %></li>
+          <li><%= link_to "My Posts", user_path(current_user) %></li>
+          <li><%= link_to "Home Page", root_path %></li>
+        </ul>
+        <br>
+      </div>
     </div>
 
-    <%= link_to "HOME", root_path %>
-    <br>
-
     <%= yield %>
-</body>
+  </body>
 </html>

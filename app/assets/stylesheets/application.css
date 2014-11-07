@@ -14,6 +14,39 @@
  *= require_self
  */
 
+body {
+  max-width: 960px;
+  margin: 0 auto;
+  border: 1px solid black;
+}
+
+#top-bar-container {
+  height: 20px;
+  width: 100%;
+  background-color: #6373F0;
+  border-bottom: 1px solid black;
+}
+
+#top-bar {
+  float: left;
+}
+
+.nav-container {
+  height: 30px;
+  width: 100%;
+  background-color: #18205C;
+}
+
+.nav-top ul {
+  list-style-type: none;
+}
+.nav-top li a{
+  color: white;
+  position:relative;
+  float: right;
+  padding: 5px 25px 0 0px;
+}
+
 img {
   height: 200px;
   width: auto;
@@ -23,4 +56,8 @@ span.image-preview {
   position: absolute;
   width: auto;
   z-index: -1;
+}
+
+.clear {
+  clear: both;
 }
