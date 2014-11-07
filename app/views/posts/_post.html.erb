@@ -2,7 +2,9 @@
 <li>
   <strong><%= post.title %></strong><br />
   <%= post.body %><br />
-  <%= image_tag post.image_url %><br />
+  <% if post.image_url.present? %>
+    <%= image_tag post.image_url %><br />
+  <% end %>
 
   <% if signed_in? %>
     <% if user_can_modify?(post) %>
