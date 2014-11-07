@@ -14,7 +14,7 @@
   <%= form.collection_select :category_id, Category.all, :id, :name, {:prompt => "Select Category"} %>
 
   <div>
-    <h5>Add an Image to Your Post</h5>
+    <h5>Add an Image to Your Post <span class="image-preview"><img id="image-preview" src="" /></span></h5>
     <%= form.label "Your Photo" %>
     <br>
     <%= form.text_field :image_url, id: "image-input" %>
@@ -22,5 +22,3 @@
 
   <%= form.submit %>
 <% end %>
-
-<img id="image-preview" src="" />
