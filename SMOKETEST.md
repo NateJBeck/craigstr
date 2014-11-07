@@ -52,3 +52,11 @@ Scenario 8: Users can view all posts within a category
 
 1. Click on an area to view its categories
 2. Click a category to view all posts tagged with that category heading
+
+Scenario 9: User can attach an image to a post
+
+1. Click on an area to view the create post form
+2. Find image url on website
+3. Input image url in create post form
+4. Hit enter
+5. The post title, text and image will append the posts list for that area

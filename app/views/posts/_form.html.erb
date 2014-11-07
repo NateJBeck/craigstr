@@ -13,5 +13,11 @@
 
   <%= form.collection_select :category_id, Category.all, :id, :name, {:prompt => "Select Category"} %>
 
+  <div>
+    <h5>Add an Image to Your Post</h5>
+    <%= form.text_field :image_url %>
+    <%= form.label :image_url %>
+  </div>
+
   <%= form.submit %>
 <% end %>

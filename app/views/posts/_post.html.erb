@@ -1,7 +1,8 @@
 <ul>
 <li>
   <strong><%= post.title %></strong><br />
-  <%= post.body %>
+  <%= post.body %><br />
+  <%= image_tag post.image_url %><br />
 
   <% if signed_in? %>
     <% if user_can_modify?(post) %>
