@@ -30,7 +30,9 @@
       <div class="nav-top">
         <ul>
           <li><%= link_to "Areas", areas_path %></li>
-          <li><%= link_to "My Posts", user_path(current_user) %></li>
+          <% if signed_in? %>
+            <li><%= link_to "My Posts", user_path(current_user) %></li>
+          <% end %>
           <li><%= link_to "Home Page", root_path %></li>
         </ul>
         <br>
