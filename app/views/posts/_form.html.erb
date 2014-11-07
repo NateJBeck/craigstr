@@ -15,9 +15,12 @@
 
   <div>
     <h5>Add an Image to Your Post</h5>
-    <%= form.text_field :image_url %>
-    <%= form.label :image_url %>
-  </div>
+    <%= form.label "Your Photo" %>
+    <br>
+    <%= form.text_field :image_url, id: "image-input" %>
+  </form><br>
 
   <%= form.submit %>
 <% end %>
+
+<img id="image-preview" src="" />
